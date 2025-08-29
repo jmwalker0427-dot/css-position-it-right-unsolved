@@ -1,38 +1,262 @@
+* {
+  box-sizing: border-box;
+  margin: auto;
+  padding: auto;
+}
+
 .robot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .robot-face-shape {
+  width: 600px;
+  height: 800px;
+  background: linear-gradient(139deg, #5e9fa3 0%, #850000be 40%, #033649 100%);
+  border: #3c4fbd 15px solid;
+  border-radius: 20%/35%;
+  position: relative;
 }
 
 .robot-eye-left {
+  position: absolute;
+  top: 20%;
+  right: 55%;
+  width: 175px; /* adjust to control the size */
+  aspect-ratio: 1;
+  clip-path: shape(
+    from 99.5% 47.97%,
+    curve to 99.5% 52.03% with 100% 50%,
+    line to 94.77% 71.2%,
+    curve to 92.88% 74.8% with 94.27% 73.24%,
+    line to 79.79% 89.58%,
+    curve to 76.44% 91.89% with 78.4% 91.15%,
+    line to 57.99% 98.89%,
+    curve to 53.95% 99.38% with 56.03% 99.64%,
+    line to 34.35% 97%,
+    curve to 30.55% 95.56% with 32.27% 96.75%,
+    line to 14.3% 84.35%,
+    curve to 11.6% 81.3% with 12.57% 83.16%,
+    line to 2.43% 63.82%,
+    curve to 1.45% 59.87% with 1.45% 61.97%,
+    line to 1.45% 40.13%,
+    curve to 2.43% 36.18% with 1.45% 38.03%,
+    line to 11.6% 18.7%,
+    curve to 14.3% 15.65% with 12.57% 16.84%,
+    line to 30.55% 4.44%,
+    curve to 34.35% 3% with 32.27% 3.25%,
+    line to 53.95% 0.62%,
+    curve to 57.99% 1.11% with 56.03% 0.36%,
+    line to 76.44% 8.11%,
+    curve to 79.79% 10.42% with 78.4% 8.85%,
+    line to 92.88% 25.2%,
+    curve to 94.77% 28.8% with 94.27% 26.76%
+  );
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff 0%,
+    #fff 20%,
+    #000 21%,
+    #000 60%,
+    #555 61%,
+    #555 100%
+  );
 }
 
 .robot-eye-right {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  width: 175px; /* adjust to control the size */
+  aspect-ratio: 1;
+  clip-path: shape(
+    from 99.5% 47.97%,
+    curve to 99.5% 52.03% with 100% 50%,
+    line to 94.77% 71.2%,
+    curve to 92.88% 74.8% with 94.27% 73.24%,
+    line to 79.79% 89.58%,
+    curve to 76.44% 91.89% with 78.4% 91.15%,
+    line to 57.99% 98.89%,
+    curve to 53.95% 99.38% with 56.03% 99.64%,
+    line to 34.35% 97%,
+    curve to 30.55% 95.56% with 32.27% 96.75%,
+    line to 14.3% 84.35%,
+    curve to 11.6% 81.3% with 12.57% 83.16%,
+    line to 2.43% 63.82%,
+    curve to 1.45% 59.87% with 1.45% 61.97%,
+    line to 1.45% 40.13%,
+    curve to 2.43% 36.18% with 1.45% 38.03%,
+    line to 11.6% 18.7%,
+    curve to 14.3% 15.65% with 12.57% 16.84%,
+    line to 30.55% 4.44%,
+    curve to 34.35% 3% with 32.27% 3.25%,
+    line to 53.95% 0.62%,
+    curve to 57.99% 1.11% with 56.03% 0.36%,
+    line to 76.44% 8.11%,
+    curve to 79.79% 10.42% with 78.4% 8.85%,
+    line to 92.88% 25.2%,
+    curve to 94.77% 28.8% with 94.27% 26.76%
+  );
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff 0%,
+    #fff 20%,
+    #000 21%,
+    #000 60%,
+    #555 61%,
+    #555 100%
+  );
 }
 
 .robot-ear-left {
+  position: relative;
+  top: -1%;
+  left: 0;
+  --s: 50px; /* control the shape (can be percentage) */
+
+  height: 220px;
+  aspect-ratio: 3/5;
+  clip-path: polygon(
+    100% 0,
+    calc(100% - var(--s)) 0,
+    0 50%,
+    calc(100% - var(--s)) 100%,
+    100% 100%,
+    var(--s) 50%
+  );
+  background: #5e9fa3;
 }
 
 .robot-ear-right {
+  position: relative;
+  top: -1%;
+  right: 100%;
+  --s: 50px; /* control the shape (can be percentage) */
+
+  height: 220px;
+  aspect-ratio: 3/5;
+  clip-path: polygon(
+    0 0,
+    var(--s) 0,
+    100% 50%,
+    var(--s) 100%,
+    0 100%,
+    calc(100% - var(--s)) 50%
+  );
+  background: #5e9fa3;
 }
 
 .robot-nose {
+  position: absolute;
+  top: 45%;
+  left: 35%;
+  --t: 45%; /* control the tail part */
+  --h: 40%; /* control the head part */
+
+  aspect-ratio: 2/3;
+  height: 250px;
+  background: #033649;
+
+  clip-path: polygon(
+    calc(50% - var(--t) / 2) 0,
+    calc(50% - var(--t) / 2) calc(100% - var(--h)),
+    0 calc(100% - var(--h)),
+    50% 100%,
+    100% calc(100% - var(--h)),
+    calc(50% + var(--t) / 2) calc(100% - var(--h)),
+    calc(50% + var(--t) / 2) 0
+  );
 }
 
 .robot-teeth {
+  position: absolute;
+  bottom: 5%;
+  left: 14%;
+  width: 400px;
+  height: 120px;
+  border: #000 8px solid;
+  border-radius: 40% 40% 30% 30%;
+  overflow: hidden;
+  align-items: center;
 }
 
 .robot-tooth {
+  width: 60px;
+  height: 70px;
+  border: #000 7px solid;
+  background: #fff;
+  display: inline-block;
+  gap: 10px;
+  position: relative;
+  top: -20px;
 }
 
 .robot-hair-style {
+  height: 250px; /* control the size */
+  width: 600px;
+  aspect-ratio: 1.8;
+  --g: radial-gradient(50% 50%, #000 98%, #0000) no-repeat;
+  mask: var(--g) 100% 100%/30% 60%, var(--g) 70% 0/50% 100%,
+    var(--g) 0 100%/36% 68%, var(--g) 27% 18%/26% 40%,
+    linear-gradient(#000 0 0) bottom/67% 58% no-repeat;
+  background: linear-gradient(180deg, #ffffff 0%, #000000 100%);
+  position: absolute;
+  top: 5%;
+  left: 35%;
 }
 
 .robot-hair-one {
+  height: 100px; /* control the size */
+  aspect-ratio: 1.8;
+  --g: radial-gradient(50% 50%, #000 98%, #0000) no-repeat;
+  mask: var(--g) 100% 100%/30% 60%, var(--g) 70% 0/50% 100%,
+    var(--g) 0 100%/36% 68%, var(--g) 27% 18%/26% 40%,
+    linear-gradient(#000 0 0) bottom/67% 58% no-repeat;
+  background: linear-gradient(180deg, #1e6109 0%, #000000 100%);
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: rotate(180deg);
 }
 
 .robot-hair-two {
+  height: 100px; /* control the size */
+  aspect-ratio: 1.8;
+  --g: radial-gradient(50% 50%, #000 98%, #0000) no-repeat;
+  mask: var(--g) 100% 100%/30% 60%, var(--g) 70% 0/50% 100%,
+    var(--g) 0 100%/36% 68%, var(--g) 27% 18%/26% 40%,
+    linear-gradient(#000 0 0) bottom/67% 58% no-repeat;
+  background: linear-gradient(180deg, #4d0257 0%, #000000 100%);
+  position: absolute;
+  top: 60%;
+  left: 10%;
 }
 
 .robot-hair-three {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 3;
+  background: #000;
+  --g: #000 calc(100% - 1px), #0000;
+  mask: conic-gradient(
+        from 170deg at 47% 8%,
+        #0000,
+        #000 2deg 20deg,
+        #0000 22deg
+      )
+      0 0/100% 50% no-repeat,
+    conic-gradient(from 170deg at 53% 8%, #0000, #000 2deg 20deg, #0000 22deg) 0
+      0/100% 50% no-repeat,
+    radial-gradient(4.5% 20% at 50% 35%, var(--g)),
+    conic-gradient(#000 0 0) exclude,
+    radial-gradient(20% 35% at 50% -5%, var(--g)),
+    radial-gradient(30% 44% at 20% 100%, var(--g)),
+    radial-gradient(30% 44% at 80% 100%, var(--g)),
+    radial-gradient(16% 51% at left, var(--g)),
+    radial-gradient(16% 51% at right, var(--g));
+  position: absolute;
+  top: 40%;
+  left: 25%;
 }
